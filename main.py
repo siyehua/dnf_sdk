@@ -87,6 +87,7 @@ def get_data():
 
     for _ in range(21):  # Fetch data for 21 weeks
         api_data = get_data_from_api(current_date_str, open_id, certificate)
+        print(api_data)
         data_list.extend(api_data["result"]["list"])
         current_date = datetime.strptime(current_date_str, "%Y-%m-%d") - timedelta(days=7)
         current_date_str = current_date.strftime("%Y-%m-%d")
